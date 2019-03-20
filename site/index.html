@@ -1,0 +1,82 @@
+<HTML>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<!-- BootStrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+		<nav>
+			<div class="btn-group">
+				<button  id="button_list" onclick="update_list()" class="btn btn-light">list</button>
+				<button  id="button_mkdir" onclick="update_mkdir()" class="btn btn-dark">mkdir</button>
+				<button  id="button_store" onclick="update_store()" class="btn btn-dark">store</button>
+				<button  id="button_retr" onclick="update_retr()" class="btn btn-dark">retr</button>
+				<button  id="button_cwd" onclick="update_cwd()" class="btn btn-info">cwd</button>
+				<button  id="button_cdup" onclick="update_cdup()" class="btn btn-info">cdup</button>
+				<button  id="button_rename" onclick="update_rename()" class="btn btn-info">rename</button>
+				<button  id="button_deletefile" onclick="update_deletefile()" class="btn btn-danger">delete file</button>
+				<button  id="button_deletedir" onclick="update_deletedir()" class="btn btn-danger">delete directory</button>
+			</div>
+
+			<div class="btn-group log">
+				<button  id="button_connection" onclick="update_connection()" class="btn btn-info">connection</button>
+				<button  id="button_deconnection" onclick="update_deconnection()" class="btn btn-danger">deconnection</button>
+			</div>
+		</nav>
+
+		<title>Passerelle FTP RESTfull</title>
+
+		<div id="form">
+			<div id="username_wrapper">
+				Username:</br>
+				<input id="username" type="text" value="lolilol"/></br>
+			</div>
+
+			<div id="password_wrapper">
+				Password:</br>
+				<input id="password" type="text"/></br>
+			</div>
+
+			<div id="path_wrapper">
+				Path:</br>
+				<input id="path" type="text" value="/"/></br>
+			</div>
+
+			<div id="file_wrapper">
+				File:</br>
+				<input id="file" type="text"/></br>
+			</div>
+
+			<div id="newfile_wrapper">
+				NewFile:</br>
+				<input id="newfile" type="text"/></br>
+			</div>
+
+			<div id="dir_wrapper">
+				Dir:</br>
+				<input id="dir" type="text"/></br>
+			</div>
+
+			<button onclick="switch_send()" class="btn btn-success">Validate</button>
+		</div>
+
+		<div id="success" class="alert alert-success">
+
+		</div>
+
+		<div id="error" class="alert alert-danger">
+
+		</div>
+
+		<div id="result">
+			<pre id="result_text"></pre>
+		</div>
+	</body>
+	<script src="update_form.js"></script>
+	<script src="send.js"></script>
+</HTML>

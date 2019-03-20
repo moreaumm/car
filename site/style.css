@@ -1,0 +1,13 @@
+nav {
+	position:absolute;
+	top:0;
+}
+
+.log {
+	position: absolute;
+	right:0 !important;
+}
+
+body {
+	padding-top: 50px;
+}
